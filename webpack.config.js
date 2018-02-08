@@ -53,7 +53,7 @@ module.exports = {
           ],
           plugins: [
             "react-hot-loader/babel",
-            "styles-jsx/babel"
+            "styled-jsx/babel"
           ]
         }
       }
