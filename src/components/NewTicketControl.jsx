@@ -9,10 +9,16 @@ class NewTicketControl extends React.Component {
     };
   }
 
+handleClick(){
+  console.log("I'm dead inside.");
+}
+
   render(){
     return (
       <div>
         <p>This is the NewTicketControl component</p>
+        //States that a method from this component called handleClick() will be triggered when this element is clicked.
+        <strong onClick = {this.handleClick}>Click me to change my state!</strong>
       </div>
     );
   }
