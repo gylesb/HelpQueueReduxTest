@@ -12,6 +12,7 @@ class App extends React.Component {
     this.state = {
       masterTicketList: []
     };
+    this.handleAddingNewTicketToList = this.handleAddingNewTicketToList.bind(this);
   }
 
   handleAddingNewTicketToList(newTicket) {
