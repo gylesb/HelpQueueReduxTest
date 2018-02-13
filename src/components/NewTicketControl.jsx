@@ -9,15 +9,13 @@ class NewTicketControl extends React.Component {
     this.state = {
       formVisibleOnPage: false
     };
+    this.handleTroubleshootingConfirmation = this.handleTroubleshootingConfirmation.bind(this);
   }
-  //   this.handleClick - this.handleClick.bind(this);
-  // }
-  //
-  // handleClick(){
-  //   this.setState({formVisibleOnPage: true});
-  //   console.log('formVisibleOnPage is currently set to:' + this.state.formVisibleOnPage);
-  // }
-  //
+
+  handleTroubleshootingConfirmation(){
+    this.setState({formVisibleOnPage: true});
+  }
+
   render() {
     let currentlyVisibleContent = null;
     if (this.state.formVisibleOnPage) {
