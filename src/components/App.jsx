@@ -14,6 +14,12 @@ class App extends React.Component {
     };
   }
 
+  handleAddingNewTicketToList(newTicket) {
+    var newMasterTicketList = this.state.masterTicketList.slice();
+    newMasterTicketList.push(newTicket);
+    this.setState({masterTicketList: newMasterTicketList});
+  }
+
   render(){
     return (
       <div>
