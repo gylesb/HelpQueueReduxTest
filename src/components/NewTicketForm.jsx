@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
+import Moment from 'moment';
 
 function NewTicketForm(props){
   let _names = null;
@@ -10,7 +11,7 @@ function NewTicketForm(props){
   function handleNewTicketFormSubmission(event) {
     event.preventDefault();
     // By calling '.value' we specify that we'd like to print only the user-inserted value from each form field
-    props.onNewTicketCreation({names: _names.value, location: _location.value, issue: _issue.value, id: v4()});
+    props.onNewTicketCreation({names: _names.value, location: _location.value, issue: _issue.value, id: v4(), timeOpen: new Moment()});
     // Add code to make sure the values come as strings.
     _names.value = '';
     _location.value = '';

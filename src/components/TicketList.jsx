@@ -26,10 +26,11 @@ function TicketList(props){
     <div>
       <hr/>
       {props.ticketList.map((ticket) =>
-        <Ticket names={ticket.names}
-          location={ticket.location}
-          issue={ticket.issue}
-          key={ticket.id}/>
+        <Ticket names = {ticket.names}
+          location = {ticket.location}
+          issue = {ticket.issue}
+          formattedWaitTime = {ticket.formattedWaitTime}
+          key = {ticket.id}/>
       )}
     </div>
   );
