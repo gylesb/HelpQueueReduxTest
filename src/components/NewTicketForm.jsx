@@ -1,10 +1,9 @@
 import React from 'react';
-import { v4 } from 'uuid';
 import Moment from 'moment';
 import { connect } from 'react-redux';
+import { v4 } from 'uuid';
 
 function NewTicketForm(props){
-  console.log(props);
   let _names = null;
   let _location = null;
   let _issue = null;
@@ -21,7 +20,6 @@ function NewTicketForm(props){
       timeOpen: new Moment()
     };
     dispatch(action);
-    // Add code to make sure the values come as strings.
     _names.value = '';
     _location.value = '';
     _issue.value = '';
@@ -29,27 +27,25 @@ function NewTicketForm(props){
 
   return (
     <div>
-      <form onSubmit = {handleNewTicketFormSubmission}>
+      <form onSubmit={handleNewTicketFormSubmission}>
         <input
-          type= 'text'
-          id= 'names'
-          placeholder= "Pair Names"
-          ref = {(input) => {_names = input;}}/>
+          type='text'
+          id='names'
+          placeholder='Pair Names'
+          ref={(input) => {_names = input;}}/>
         <input
-          type= 'text'
-          id= 'location'
-          placeholder= 'Location'
-          ref = {(input) => {_location = input;}}/>
+          type='text'
+          id='location'
+          placeholder='Location'
+          ref={(input) => {_location = input;}}/>
         <textarea
-          id= 'issue'
-          placeholder= 'Describe your issue.'
-          ref = {(textarea) => {_issue = textarea;}}/>
-        <button type= 'submit'>Help!</button>
+          id='issue'
+          placeholder='Describe your issue.'
+          ref={(textarea) => {_issue = textarea;}}/>
+        <button type='submit'>Help!</button>
       </form>
     </div>
   );
 }
 
-NewTicketForm = connect()(NewTicketForm);
-
-export default NewTicketForm;
+export default connect()(NewTicketForm);

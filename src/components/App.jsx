@@ -42,7 +42,6 @@ class App extends React.Component {
   }
 
   render(){
-    console.log(this.state.masterTicketList);
     return (
       <div>
         <Header/>
@@ -57,7 +56,6 @@ class App extends React.Component {
       </div>
     );
   }
-
 }
 
 export default App;

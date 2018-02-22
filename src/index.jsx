@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
-import { AppContainer } from 'react-hot-loader';
-import {HashRouter} from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { createStore } from 'redux';
 import ticketListReducer from './reducers/ticket-list-reducer';
 import { Provider } from 'react-redux';
 
-const store = createStore = createStore(ticketListReducer);
+const store = createStore(ticketListReducer);
 
 let unsubscribe = store.subscribe(() =>
   console.log(store.getState())
@@ -15,23 +14,21 @@ let unsubscribe = store.subscribe(() =>
 
 const render = (Component) => {
   ReactDOM.render(
-    <AppContainer>
-      <HashRouter>
-        <Provider>
-          <Component/>
-        </Provider>
-      </HashRouter>
-    </AppContainer>,
+    <HashRouter>
+      <Provider store={store}>
+        <Component/>
+      </Provider>
+    </HashRouter>,
     document.getElementById('react-app-root')
   );
 };
 
 render(App);
 
-/*eslint-disable*/
+/*eslint-disable */
 if (module.hot) {
   module.hot.accept('./components/App', () => {
-    render(App)
+    render(App);
   });
 }
-/*eslint-enable*/
+/*eslint-enable */
