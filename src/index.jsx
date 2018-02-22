@@ -5,6 +5,7 @@ import { AppContainer } from 'react-hot-loader';
 import {HashRouter} from 'react-router-dom';
 import { createStore } from 'redux';
 import ticketListReducer from './reducers/ticket-list-reducer';
+import { Provider } from 'react-redux';
 
 const store = createStore = createStore(ticketListReducer);
 
@@ -12,7 +13,9 @@ const render = (Component) => {
   ReactDOM.render(
     <AppContainer>
       <HashRouter>
-        <Component/>
+        <Provider>
+          <Component/>
+        </Provider>
       </HashRouter>
     </AppContainer>,
     document.getElementById('react-app-root')
